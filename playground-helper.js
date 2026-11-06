@@ -1,4 +1,4 @@
-/* Include this unchanged in any HTML activity hosted on a website connected to the helper. */
+/* Include this unchanged in any Performance and Training GitHub Pages activity. */
 (() => {
  const owner=crypto.randomUUID(),pending=new Map();
  const native=typeof chrome!=='undefined'&&!!chrome.runtime?.id&&location.protocol==='chrome-extension:';
@@ -10,7 +10,7 @@
   let result;
   if(native)result=await chrome.runtime.sendMessage({...payload,owner});
   else result=await new Promise((resolve,reject)=>{
-   const request=crypto.randomUUID(),timer=setTimeout(()=>{pending.delete(request);reject(Error('Helper not connected. Click the helper icon, connect the activity website, then refresh.'));},timeout);
+   const request=crypto.randomUUID(),timer=setTimeout(()=>{pending.delete(request);reject(Error('Install or reload Metropolitan Playground Helper, then refresh this activity page.'));},timeout);
    pending.set(request,{resolve,reject,timer});
    window.postMessage({channel:'metropolitan-playground/request/v1',request,payload:{...payload,owner}},location.origin);
   });

@@ -73,5 +73,5 @@
   });
   document.addEventListener('visibilitychange',()=>{if(!document.hidden&&polling)check();});
   render();
-  MetropolitanPlayground.ready().then(r=>{installed=!!r?.ok;$('connection').textContent='Helper connected · v'+r.version;message('Ready. This course activity uses your general Playground Helper.');}).catch(()=>{$('connection').textContent='Helper not connected';message('Click the general helper icon, connect the website hosting this activity, then refresh. Copy prompt remains available.');});
+  MetropolitanPlayground.ready().then(r=>{installed=!!r?.ok;$('connection').textContent='Helper connected · v'+r.version;message('Ready. This course activity uses your general Playground Helper.');}).catch(()=>{$('connection').textContent='Helper not connected';message('Install or reload Metropolitan Playground Helper, then refresh this activity. No website connection step is needed. Copy prompt remains available.');});
 })();
